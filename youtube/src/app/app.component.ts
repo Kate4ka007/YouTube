@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export default class AppComponent {
   title = 'youtube';
+
+  showSorts = false;
+
+  goApp(increased:any) {
+    this.showSorts = increased;
+    console.log('inApp', increased);
+  }
 }

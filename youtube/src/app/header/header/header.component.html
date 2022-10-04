@@ -1,1 +1,13 @@
-<p>header works!</p>
+<div class="header">
+  <div class="header group">
+    <app-logo></app-logo>
+    <app-search-input></app-search-input>
+    <app-settings-button (changed)="changed($event)"></app-settings-button>
+  </div>
+
+
+<div class="header__auth">
+  <app-auth ></app-auth>
+</div>
+</div>
+

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-settings-button',
@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./settings-button.component.scss'],
 })
 export default class SettingsButtonComponent {
+  isShow = false;
+
+  @Output() changed = new EventEmitter<boolean>();
+
+  change(bool:boolean) {
+    this.changed.emit(bool);
+    console.log('child', bool);
+  }
 }

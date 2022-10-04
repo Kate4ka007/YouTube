@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export default class HeaderComponent {
+  showSetting = false;
 
+  @Output() goApp = new EventEmitter<boolean>();
+
+  changed(increased:boolean) {
+    console.log('parent', increased);
+    this.showSetting = increased;
+    this.goApp.emit(increased);
+  }
 }
