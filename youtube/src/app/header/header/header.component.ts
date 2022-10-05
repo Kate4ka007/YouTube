@@ -10,9 +10,15 @@ export default class HeaderComponent {
 
   @Output() goApp = new EventEmitter<boolean>();
 
+  @Output() showResults = new EventEmitter<boolean>();
+
   changed(increased:boolean) {
     console.log('parent', increased);
     this.showSetting = increased;
     this.goApp.emit(increased);
+  }
+
+  isSearch(search: boolean) {
+    this.showResults.emit(search);
   }
 }

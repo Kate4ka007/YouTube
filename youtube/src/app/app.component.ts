@@ -20,6 +20,8 @@ export default class AppComponent implements OnInit, OnDestroy {
 
   http: any;
 
+  startShow = false;
+
   constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
@@ -35,6 +37,11 @@ export default class AppComponent implements OnInit, OnDestroy {
 
   goApp(bool:boolean): void {
     this.showSorts = bool;
+  }
+
+  showResults(bool:boolean): void {
+    this.startShow = bool;
+    console.log('show', this.startShow);
   }
 
   ngOnDestroy(): void {

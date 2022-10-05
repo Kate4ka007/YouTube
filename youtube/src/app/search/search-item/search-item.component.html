@@ -1,5 +1,16 @@
 <div class="card" [appBorder]="data.snippet.publishedAt">
-  <img class="card__img" [src]="data.snippet.thumbnails.medium.url" alt="">
+  <div class="card__image">
+    <img class="card__img" [src]="data.snippet.thumbnails.medium.url" alt="">
+  </div>
+
+  <div class="card__icons">
+    <ul class="card__list">
+      <li class="card__icon"><img src="assets/viewed.png" alt=""> {{data.statistics.viewCount}}</li>
+      <li class="card__icon"><img src="assets/liked.png" alt=""> {{data.statistics.likeCount}}</li>
+      <li class="card__icon"><img src="assets/dislike.png" alt=""> {{data.statistics.dislikeCount}}</li>
+      <li class="card__icon"><img src="assets/comments.png" alt=""> {{data.statistics.commentCount}}</li>
+    </ul>
+  </div>
   <p class="card__title" >{{ data.snippet.title }}</p>
   <button class="card__button" title="{{data.snippet.description}}">more...</button>
 </div>

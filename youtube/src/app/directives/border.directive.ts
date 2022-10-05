@@ -49,17 +49,13 @@ export default class BorderDirective implements OnInit {
     return '5px solid red';
   }
 
-  @HostBinding('style.borderRadius') get getBorderRadius() {
-    return '5px';
-  }
-
   @HostBinding('style.cursor') get getCursor() {
     return 'pointer';
   }
 
-  @HostBinding('style.width') get getWidth() {
+  /*   @HostBinding('style.width') get getWidth() {
     return '400px';
-  }
+  } */
 
   @HostBinding('style.color') get getColor() {
     return this.color;

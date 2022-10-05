@@ -10,7 +10,8 @@
     color: #cccccc;
     padding: 10px;
     outline: none;
-    width: 180px;
+    width: 220px;
+    height: 30px;
     &::placeholder {
       color: #929292;
       font-family: "Roboto";
@@ -22,7 +23,7 @@
     background-color: #505050;
     color: #cccccc;
     padding: 5px;
-    height: 37.5px;
+    height: 30px;
     width: 37.5px;
 
     &:hover {
