@@ -19,7 +19,7 @@
   &__button {
     border: 1px solid #686767;
     border-left: none;
-    background-color: #363636;
+    background-color: #505050;
     color: #cccccc;
     padding: 5px;
     height: 37.5px;
@@ -27,7 +27,7 @@
 
     &:hover {
       cursor: pointer;
-      background-color: lighten($color: #363636, $amount: 10);
+      background-color: lighten($color: #363636, $amount: 20);
     }
   }
 }

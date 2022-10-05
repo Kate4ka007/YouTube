@@ -1,7 +1,7 @@
 <div class="main-page" #main>
   <app-header (goApp)="goApp($event)"></app-header>
   <app-search-sorting *ngIf="showSorts"></app-search-sorting>
-  <app-search-results></app-search-results>
+  <app-search-results [cardData]="cardData"></app-search-results>
 </div>
 
 

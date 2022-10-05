@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule }   from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import AppComponent from './app.component';
 import HeaderComponent from './header/header/header.component';
@@ -12,6 +12,7 @@ import SearchSortingComponent from './search/search-sorting/search-sorting.compo
 import SettingsButtonComponent from './header/settings-button/settings-button.component';
 import LogoComponent from './header/logo/logo.component';
 import NotFoundComponent from './shared/not-found/not-found.component';
+import BorderDirective from './directives/border.directive';
 
 @NgModule({
   declarations: [
@@ -25,10 +26,11 @@ import NotFoundComponent from './shared/not-found/not-found.component';
     SettingsButtonComponent,
     LogoComponent,
     NotFoundComponent,
+    BorderDirective,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

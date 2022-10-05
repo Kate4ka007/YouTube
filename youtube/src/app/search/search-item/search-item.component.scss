@@ -1,0 +1,33 @@
+.card {
+  border: 2px solid #686767;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  height: 350px;
+  flex-direction: column;
+  background: #363636;
+  border-radius: 5px;
+  color: #cccccc;
+  font-weight: bold;
+
+  &__button {
+    width: 100px;
+    background-color: #ff0000;
+    border: none;
+    outline: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    color: white;
+    margin: 0 auto;
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($color: #ff0000, $amount: 15);
+    }
+  }
+
+  &__img {
+    border-radius: 5px;
+  }
+}

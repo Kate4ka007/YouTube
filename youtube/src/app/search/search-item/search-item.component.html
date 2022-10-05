@@ -1,1 +1,5 @@
-<p>search-item works!</p>
+<div class="card" [appBorder]="data.snippet.publishedAt">
+  <img class="card__img" [src]="data.snippet.thumbnails.medium.url" alt="">
+  <p class="card__title" >{{ data.snippet.title }}</p>
+  <button class="card__button" title="{{data.snippet.description}}">more...</button>
+</div>
