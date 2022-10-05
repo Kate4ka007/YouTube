@@ -9,6 +9,8 @@ import { Item } from '../models/search-item.model';
 export default class SearchResultsComponent implements OnInit {
   @Input() cardData: Item[] | undefined;
 
+  @Input() typeSort!: string;
+
   ngOnInit(): void {
     console.log('results', this.cardData);
   }

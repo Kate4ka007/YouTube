@@ -22,6 +22,8 @@ export default class AppComponent implements OnInit, OnDestroy {
 
   startShow = false;
 
+  typeSort!: string;
+
   constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
@@ -42,6 +44,11 @@ export default class AppComponent implements OnInit, OnDestroy {
   showResults(bool:boolean): void {
     this.startShow = bool;
     console.log('show', this.startShow);
+  }
+
+  onChanged(str:string) {
+    this.typeSort = str;
+    console.log(this.typeSort);
   }
 
   ngOnDestroy(): void {

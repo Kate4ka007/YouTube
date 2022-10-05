@@ -13,6 +13,7 @@ import SettingsButtonComponent from './header/settings-button/settings-button.co
 import LogoComponent from './header/logo/logo.component';
 import NotFoundComponent from './shared/not-found/not-found.component';
 import BorderDirective from './directives/border.directive';
+import SortPipe from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import BorderDirective from './directives/border.directive';
     LogoComponent,
     NotFoundComponent,
     BorderDirective,
+    SortPipe,
   ],
   imports: [
     BrowserModule,

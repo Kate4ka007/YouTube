@@ -3,6 +3,7 @@
 
 .search-input {
   display: flex;
+
   &__input {
     border: 1px solid #686767;
     border-right: none;
@@ -15,6 +16,13 @@
     &::placeholder {
       color: #929292;
       font-family: "Roboto";
+    }
+    @media screen and (max-width: 500px) {
+      width: 150px;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 100px;
     }
   }
   &__button {

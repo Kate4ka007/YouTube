@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-sorting',
@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-sorting.component.scss'],
 })
 export default class SearchSortingComponent {
+  isSort!: string;
+
+  @Output() typeSort = new EventEmitter<string>();
+
+  sortBy(str: string) {
+    this.isSort = str;
+    this.typeSort.emit(this.isSort);
+  }
 }
