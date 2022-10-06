@@ -3,7 +3,7 @@
   <ul class="search-sorting__list">
     <li class="search-sorting__item" (click)="sortBy('date')">date</li>
     <li class="search-sorting__item" (click)="sortBy('count')">count of views</li>
-    <li class="search-sorting__item" (click)="sortBy('word')">by word of sentance</li>
+    <li class="search-sorting__item">by word of sentance</li>
   </ul>
-  <input type="text" class="search-sorting__input">
+  <input type="text" class="search-sorting__input" [(ngModel)] = "word" (input)="sortByWord()">
 </div>
