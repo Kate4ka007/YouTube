@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Item } from '../models/search-item.model';
 
 @Component({
@@ -6,12 +6,8 @@ import { Item } from '../models/search-item.model';
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss'],
 })
-export default class SearchResultsComponent implements OnInit {
+export default class SearchResultsComponent {
   @Input() cardData: Item[] | undefined;
 
   @Input() typeSort!: string;
-
-  ngOnInit(): void {
-    console.log('results', this.cardData);
-  }
 }

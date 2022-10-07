@@ -32,7 +32,6 @@ export default class AppComponent implements OnInit, OnDestroy {
       next: (data:Response) => {
         this.fullData = data;
         this.cardData = data.items;
-        console.log('carddata', this.cardData);
       },
     });
   }
@@ -43,12 +42,10 @@ export default class AppComponent implements OnInit, OnDestroy {
 
   showResults(bool:boolean): void {
     this.startShow = bool;
-    console.log('show', this.startShow);
   }
 
-  onChanged(str:string) {
+  onChanged(str:string): void {
     this.typeSort = str;
-    console.log(this.typeSort);
   }
 
   ngOnDestroy(): void {

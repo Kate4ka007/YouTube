@@ -10,8 +10,7 @@ export default class SettingsButtonComponent {
 
   @Output() changed = new EventEmitter<boolean>();
 
-  change(bool:boolean) {
+  change(bool:boolean): void {
     this.changed.emit(bool);
-    console.log('child', bool);
   }
 }

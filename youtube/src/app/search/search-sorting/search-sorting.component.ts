@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import SortType from '../models/search-sorting.model';
 
 @Component({
   selector: 'app-search-sorting',
@@ -16,21 +17,21 @@ export default class SearchSortingComponent {
 
   @Output() typeSort = new EventEmitter<string>();
 
-  sortBy(str: string) {
+  sortBy(str: string): void {
     this.isSort = str;
-    if (str === 'date' && this.orderDate === true) {
-      this.isSort = 'date';
-    } else if (str === 'date' && this.orderDate === false) {
-      this.isSort = 'date-down';
-    } else if (str === 'count' && this.orderCount === true) {
-      this.isSort = 'count';
-    } else if (str === 'count' && this.orderCount === false) {
-      this.isSort = 'count-down';
+    if (str === SortType.date && this.orderDate === true) {
+      this.isSort = SortType.date;
+    } else if (str === SortType.date && this.orderDate === false) {
+      this.isSort = SortType.dateDown;
+    } else if (str === SortType.count && this.orderCount === true) {
+      this.isSort = SortType.count;
+    } else if (str === SortType.count && this.orderCount === false) {
+      this.isSort = SortType.countDown;
     }
     this.typeSort.emit(this.isSort);
   }
 
-  sortByWord() {
+  sortByWord(): void {
     if (this.word) {
       this.typeSort.emit(this.word);
     }
