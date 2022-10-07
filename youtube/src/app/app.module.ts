@@ -10,7 +10,6 @@ import SearchInputComponent from './search/search-input/search-input.component';
 import AuthComponent from './auth/auth.component';
 import SearchSortingComponent from './search/search-sorting/search-sorting.component';
 import SettingsButtonComponent from './header/settings-button/settings-button.component';
-import LogoComponent from './header/logo/logo.component';
 import NotFoundComponent from './shared/not-found/not-found.component';
 import BorderDirective from './directives/border.directive';
 import SortPipe from './pipes/sort.pipe';
@@ -25,7 +24,6 @@ import SortPipe from './pipes/sort.pipe';
     AuthComponent,
     SearchSortingComponent,
     SettingsButtonComponent,
-    LogoComponent,
     NotFoundComponent,
     BorderDirective,
     SortPipe,

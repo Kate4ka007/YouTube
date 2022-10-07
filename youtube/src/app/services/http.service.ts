@@ -7,7 +7,6 @@ export default class HttpService {
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
-    console.log(this.http.get('assets/data.json'));
-    return this.http.get('assets/data.json');
+    return this.http.get('assets/data/data.json');
   }
 }
