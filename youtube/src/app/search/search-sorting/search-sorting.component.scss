@@ -18,6 +18,13 @@
       cursor: pointer;
       color: lighten($color: #cccccc, $amount: 20)
     }
+    &:last-child {
+      text-decoration: none;
+      &:hover {
+        cursor: default;
+        color: #cccccc;
+      }
+    }
   }
 
   &__input {
@@ -29,6 +36,10 @@
     &::placeholder {
       color: #929292;
       font-family: "Roboto";
+    }
+
+    @media screen and (max-width: 550px) {
+width: 100px;
     }
   }
 }
