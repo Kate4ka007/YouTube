@@ -3,7 +3,6 @@ import {
   Directive,
   ElementRef,
   HostBinding,
-  HostListener,
   Input,
   OnInit,
 } from '@angular/core';
@@ -11,7 +10,7 @@ import {
 @Directive({
   selector: '[appBorder]',
 })
-export default class BorderDirective implements OnInit {
+export class BorderDirective implements OnInit {
   @Input('appBorder') elem!: string;
 
   defaultColor: string = '#cccccc';
@@ -20,11 +19,11 @@ export default class BorderDirective implements OnInit {
 
   month!: number;
 
-  SIXMONTH = 61;
+  SIX_MONTH = 182;
 
-  MONTH = 31;
+  MONTH = 30;
 
-  SEVENDAYS = 7;
+  SEVEN_DAYS = 7;
 
   constructor(private elementRef: ElementRef) {
     this.elementRef.nativeElement.style.fontWeight = 'bold';
@@ -39,11 +38,11 @@ export default class BorderDirective implements OnInit {
   }
 
   @HostBinding('style.borderBottom') get getBorder() {
-    if (this.month < this.SEVENDAYS) {
+    if (this.month < this.SEVEN_DAYS) {
       return '5px solid blue';
     } if (this.month < this.MONTH) {
       return '5px solid green';
-    } if (this.month < this.SIXMONTH) {
+    } if (this.month < this.SIX_MONTH) {
       return '5px solid yellow';
     }
     return '5px solid red';
@@ -53,19 +52,7 @@ export default class BorderDirective implements OnInit {
     return 'pointer';
   }
 
-  /*   @HostBinding('style.width') get getWidth() {
-    return '400px';
-  } */
-
   @HostBinding('style.color') get getColor() {
     return this.color;
-  }
-
-  @HostListener('mouseenter') onMouseEnter() {
-    this.color = '#ffffff';
-  }
-
-  @HostListener('mouseleave') onMouseLeave() {
-    this.color = this.defaultColor;
   }
 }

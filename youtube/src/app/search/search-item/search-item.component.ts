@@ -6,6 +6,6 @@ import { Item } from '../models/search-item.model';
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.scss'],
 })
-export default class SearchItemComponent {
+export class SearchItemComponent {
   @Input() data!: Item;
 }

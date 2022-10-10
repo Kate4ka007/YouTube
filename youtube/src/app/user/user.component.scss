@@ -1,0 +1,26 @@
+@import "../../styles.scss";
+
+:host {
+  justify-self: end;
+}
+
+.user {
+  &__auth {
+    width: 35px;
+    height: 35px;
+    background-color: #a7a7a7;
+    border-radius: 100%;
+    padding: 5px;
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($color: #a7a7a7, $amount: 15);
+      transform: scale(1.05);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+  }
+}

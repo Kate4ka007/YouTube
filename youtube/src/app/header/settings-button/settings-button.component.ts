@@ -5,7 +5,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   templateUrl: './settings-button.component.html',
   styleUrls: ['./settings-button.component.scss'],
 })
-export default class SettingsButtonComponent {
+export class SettingsButtonComponent {
   isShow = false;
 
   @Output() changed = new EventEmitter<boolean>();

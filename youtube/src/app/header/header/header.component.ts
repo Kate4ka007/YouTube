@@ -5,7 +5,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export default class HeaderComponent {
+export class HeaderComponent {
   showSetting = false;
 
   @Output() goApp = new EventEmitter<boolean>();

@@ -6,7 +6,7 @@ import { Item } from '../models/search-item.model';
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss'],
 })
-export default class SearchResultsComponent {
+export class SearchResultsComponent {
   @Input() cardData: Item[] | undefined;
 
   @Input() typeSort!: string;

@@ -4,7 +4,7 @@ import { Item } from '../search/models/search-item.model';
 @Pipe({
   name: 'sort',
 })
-export default class SortPipe implements PipeTransform {
+export class SortPipe implements PipeTransform {
   // eslint-disable-next-line class-methods-use-this, consistent-return
   transform(value: Item[] | undefined, args?: string): any {
     if (value) {

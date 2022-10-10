@@ -5,7 +5,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.scss'],
 })
-export default class SearchInputComponent {
+export class SearchInputComponent {
   angular = '';
 
   search = false;

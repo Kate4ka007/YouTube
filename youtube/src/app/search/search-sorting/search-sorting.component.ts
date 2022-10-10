@@ -6,7 +6,7 @@ import SortType from '../models/search-sorting.model';
   templateUrl: './search-sorting.component.html',
   styleUrls: ['./search-sorting.component.scss'],
 })
-export default class SearchSortingComponent {
+export class SearchSortingComponent {
   isSort!: string;
 
   word: string = '';

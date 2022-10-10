@@ -1,8 +1,15 @@
+<!-- <nav>
+  <a routerLink="/" routerLinkActive="active">home</a>
+  <a routerLink="/about" routerLinkActive="active">about</a>
+</nav>
+ -->
+
 <div class="main-page" #main>
   <app-header (goApp)="goApp($event)" (showResults)="showResults($event)"></app-header>
   <app-search-sorting *ngIf="showSorts" (typeSort)="onChanged($event)"></app-search-sorting>
   <app-search-results *ngIf="startShow" [cardData]="cardData" [typeSort]="typeSort"></app-search-results>
 </div>
+<router-outlet></router-outlet>
 
 
 

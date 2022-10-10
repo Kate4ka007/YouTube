@@ -15,12 +15,14 @@
         "createDefaultProgram": true
       },
       "extends": [
-        "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates",
         "airbnb-base",
-        "airbnb-typescript/base"
+        "airbnb-typescript/base",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+
       ],
       "rules": {
+        "import/prefer-default-export": "off",
         "@angular-eslint/directive-selector": [
           "error",
           {

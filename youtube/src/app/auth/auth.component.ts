@@ -5,5 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
 })
-export default class AuthComponent {
+export class AuthComponent {
+
 }
