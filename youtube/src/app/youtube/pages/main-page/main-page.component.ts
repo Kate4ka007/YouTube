@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from './services/http.service';
-import { Response } from './search/models/search-response.model';
-import { Item } from './search/models/search-item.model';
-import { ShowResultsService } from './core/services/show-results.service';
+import { HttpService } from '../../../services/http.service';
+import { Response } from '../../../search/models/search-response.model';
+import { Item } from '../../../search/models/search-item.model';
+import { ShowResultsService } from '../../../core/services/show-results.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-main-page',
+  templateUrl: './main-page.component.html',
+  styleUrls: ['./main-page.component.scss'],
   providers: [HttpService],
 })
-export class AppComponent implements OnInit {
+export class MainPageComponent implements OnInit {
   title = 'youtube';
 
   showSorts = false;

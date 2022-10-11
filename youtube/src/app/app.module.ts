@@ -4,8 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header/header.component';
-import { SearchResultsComponent } from './search/search-results/search-results.component';
-import { SearchItemComponent } from './search/search-item/search-item.component';
+// import { SearchResultsComponent } from './search/search-results/search-results.component';
+// import { SearchItemComponent } from './search/search-item/search-item.component';
 import { SearchInputComponent } from './search/search-input/search-input.component';
 import { UserComponent } from './user/user.component';
 import { SearchSortingComponent } from './search/search-sorting/search-sorting.component';
@@ -19,8 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    SearchResultsComponent,
-    SearchItemComponent,
+    /* SearchResultsComponent, */
+    /* SearchItemComponent, */
     SearchInputComponent,
     UserComponent,
     SearchSortingComponent,

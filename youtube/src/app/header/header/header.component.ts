@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ShowResultsService } from 'src/app/core/services/show-results.service';
 
 @Component({
   selector: 'app-header',
@@ -10,14 +11,17 @@ export class HeaderComponent {
 
   @Output() goApp = new EventEmitter<boolean>();
 
-  @Output() showResults = new EventEmitter<boolean>();
+  // @Output() showResults = new EventEmitter<boolean>();
 
-  changed(increased:boolean): void {
-    this.showSetting = increased;
-    this.goApp.emit(increased);
+  constructor(private openResults: ShowResultsService) { }
+
+  openSettings(showSetting:boolean): void {
+    this.showSetting = showSetting;
+    this.goApp.emit(showSetting);
   }
 
   isSearch(search: boolean): void {
-    this.showResults.emit(search);
+    // this.showResults.emit(search);
+    this.openResults.updateShowResults(search);
   }
 }
