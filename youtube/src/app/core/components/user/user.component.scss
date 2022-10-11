@@ -1,4 +1,4 @@
-@import "../../styles.scss";
+@import "../../../../styles.scss";
 
 :host {
   justify-self: end;
@@ -19,6 +19,8 @@
   }
 
   &__img {
+    width: 18px;
+    height: 18px;
     width: 100%;
     height: auto;
     border-radius: 100%;

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import SortType from '../models/search-sorting.model';
+import SortType from '../../models/search-sorting.model';
 
 @Component({
   selector: 'app-search-sorting',

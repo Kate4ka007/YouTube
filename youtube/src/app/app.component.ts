@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from './services/http.service';
-import { Response } from './search/models/search-response.model';
-import { Item } from './search/models/search-item.model';
+import { HttpService } from './core/services/http.service';
+import { Response } from './core/models/search-response.model';
+import { Item } from './core/models/search-item.model';
 import { ShowResultsService } from './core/services/show-results.service';
 
 @Component({

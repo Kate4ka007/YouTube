@@ -1,4 +1,4 @@
-@import '../../../styles.scss';
+@import '../../../../styles.scss';
 
 .setting {
   box-sizing: border-box;
@@ -12,7 +12,7 @@
   border-radius: 5px;
   padding:5px;
   &:hover {
-    cursor: pointer;    
+    cursor: pointer;
     background-color: lighten($color: #363636, $amount: 10);
   }
   &__img {

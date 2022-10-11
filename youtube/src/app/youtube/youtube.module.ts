@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { YoutubeComponent } from './youtube.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
-import { SearchResultsComponent } from '../search/search-results/search-results.component';
-import { SearchItemComponent } from '../search/search-item/search-item.component';
-import { SortPipe } from '../pipes/sort.pipe';
-import { BorderDirective } from '../directives/border.directive';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { CoreModule } from '../core/core.module';
+// import { BorderDirective } from '../directives/border.directive';
+// import { SortPipe } from '../pipes/sort.pipe';
+// import { CoreModule } from '../core/core.module';
+// import { SearchItemComponent } from '../core/components/search-item/search-item.component';
+// import { SortPipe } from '../pipes/sort.pipe';
+// import { BorderDirective } from '../directives/border.directive';
 
 const routes: Routes = [
   {
@@ -20,13 +24,13 @@ const routes: Routes = [
     YoutubeComponent,
     MainPageComponent,
     SearchResultsComponent,
-    SearchItemComponent,
-    SortPipe,
-    BorderDirective,
+    // SearchItemComponent,
+
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    CoreModule,
   ],
 })
 export class YoutubeModule { }

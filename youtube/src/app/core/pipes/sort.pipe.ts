@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Item } from '../search/models/search-item.model';
+import { Item } from '../models/search-item.model';
 
 @Pipe({
   name: 'sort',
