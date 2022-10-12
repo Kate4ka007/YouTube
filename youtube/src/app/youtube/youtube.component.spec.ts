@@ -8,9 +8,9 @@ describe('YoutubeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ YoutubeComponent ]
+      declarations: [YoutubeComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(YoutubeComponent);
     component = fixture.componentInstance;

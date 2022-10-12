@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "deploy": "ng deploy --base-href=https://rolling-scopes-school.github.io/kate4ka007-ANGULAR2022Q3/"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,14 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "@types/d3-shape": "^3.1.0",
+    "d3-drag": "^3.0.0",
+    "d3-selection": "^3.0.0",
+    "d3-shape": "^3.1.0",
+    "d3-zoom": "^3.0.0",
+    "dagre-compound": "^0.0.12",
+    "monaco-editor": "^0.34.0",
+    "ng-zorro-antd": "^14.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -34,9 +43,12 @@
     "@angular-eslint/template-parser": "14.1.2",
     "@angular/cli": "~14.1.0",
     "@angular/compiler-cli": "^14.1.0",
+    "@types/d3-selection": "^3.0.3",
+    "@types/d3-zoom": "^3.0.1",
     "@types/jasmine": "~4.0.0",
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
+    "angular-cli-ghpages": "^1.0.3",
     "eslint": "^8.23.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",

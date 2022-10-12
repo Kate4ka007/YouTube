@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import SortType from '../../models/search-sorting.model';
+import { SortTypeService } from '../../services/sort-type.service';
 
 @Component({
   selector: 'app-search-sorting',
@@ -15,7 +16,9 @@ export class SearchSortingComponent {
 
   orderCount = true;
 
-  @Output() typeSort = new EventEmitter<string>();
+  // @Output() typeSort = new EventEmitter<string>();
+
+  constructor(private sortTypeService: SortTypeService) {}
 
   sortBy(str: string): void {
     this.isSort = str;
@@ -28,12 +31,14 @@ export class SearchSortingComponent {
     } else if (str === SortType.count && this.orderCount === false) {
       this.isSort = SortType.countDown;
     }
-    this.typeSort.emit(this.isSort);
+    // this.typeSort.emit(this.isSort);
+    this.sortTypeService.updateShowResults(this.isSort);
   }
 
   sortByWord(): void {
     if (this.word) {
-      this.typeSort.emit(this.word);
+      // this.typeSort.emit(this.word);
+      this.sortTypeService.updateShowResults(this.word);
     }
   }
 }

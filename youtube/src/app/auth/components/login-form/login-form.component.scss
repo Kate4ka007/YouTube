@@ -1,0 +1,58 @@
+.login-form {
+  max-width: 300px;
+}
+
+.login-form-margin {
+  margin-bottom: 16px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+  background-color: red;
+  border: none;
+  &:hover {
+    background-color: lighten($color: #ff0000, $amount: 20);
+  }
+}
+
+.login {
+  background-color: #363636;
+  margin: 50px auto;
+  max-width: 340px;
+  padding: 20px;
+  color: white;
+  border: 1px solid #686767;
+}
+
+.ant-input,
+.ant-input-affix-wrapper {
+  padding: 4px 11px;
+  font-size: 14px;
+  background-color: rgb(70, 70, 70);
+  color: white;
+}
+
+.ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper,
+.ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper:hover {
+  background: #303030;
+  border-color: #ff4d4f;
+}
+
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input,
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:hover {
+  background: #303030;
+  border-color: #ff4d4f;
+}
+
+input {
+  background: #303030;
+}
+
+span {
+  color: white;
+  margin-right: 5px;
+}

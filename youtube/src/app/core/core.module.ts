@@ -11,6 +11,7 @@ import { SettingsButtonComponent } from './components/settings-button/settings-b
 import { UserComponent } from './components/user/user.component';
 import { BorderDirective } from './directives/border.directive';
 import { SortPipe } from './pipes/sort.pipe';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: CoreComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
     UserComponent,
     SortPipe,
     BorderDirective,
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,
@@ -43,6 +45,7 @@ const routes: Routes = [
     UserComponent,
     SortPipe,
     BorderDirective,
+    NotFoundComponent,
   ],
 })
 export class CoreModule { }

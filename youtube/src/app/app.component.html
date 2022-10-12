@@ -1,18 +1,6 @@
-<!-- <nav>
-  <a routerLink="/" routerLinkActive="active">home</a>
-  <a routerLink="/core" routerLinkActive="active">core</a>
-  <a routerLink="/auth" routerLinkActive="active">auth</a>
-  <a routerLink="/youtube" routerLinkActive="active">youtube</a>
-</nav> -->
-
-
-<div class="main-page" #main>
-  <app-header (goApp)="goApp($event)"></app-header>
-  <app-search-sorting *ngIf="showSorts" (typeSort)="onChanged($event)"></app-search-sorting>
-  <!-- <app-search-results *ngIf="startShow" [cardData]="cardData" [typeSort]="typeSort"></app-search-results> -->
-  <router-outlet></router-outlet>
-</div>
-
-
-
+  <div class="main-page" #main>
+    <app-header (goApp)="goApp($event)"></app-header>
+    <app-search-sorting *ngIf="showSorts"></app-search-sorting>
+    <router-outlet></router-outlet>
+  </div>
 
