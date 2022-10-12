@@ -13,5 +13,5 @@
   </div>
   <p class="card__title" >{{ data.snippet.title }}<br> <span class="card__date">({{ data.snippet.publishedAt | date }})</span></p>
 
-  <button class="card__button" title="{{data.snippet.description}}">more...</button>
+  <a class="card__button" title="{{data.snippet.description}}" routerLink="/youtube/result" routerLinkActive="active" [queryParams]="{id: data.id}">more...</a>
 </div>

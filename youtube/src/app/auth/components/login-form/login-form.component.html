@@ -26,7 +26,7 @@
     </div>
     <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
     <span>Or</span>
-    <a routerLink="/auth/registration" routerLinkActive="active">register now!</a>
+    <a routerLink="/auth/registration" routerLinkActive="active" [queryParams]="{part: 'navbar'}">register now!</a>
   </form>
 </div>
 
