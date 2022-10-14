@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { YoutubeItemService } from 'src/app/core/services/youtube-item.service';
 import { Item } from '../../../core/models/search-item.model';
 import { HttpService } from '../../../core/services/http.service';
 
@@ -15,7 +16,11 @@ export class InfoPageComponent implements OnInit {
 
   param: string = '';
 
-  constructor(private dataService: HttpService, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private dataService: HttpService,
+    private activatedRoute: ActivatedRoute,
+    private youtubeItemService: YoutubeItemService,
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params) => {
@@ -24,7 +29,7 @@ export class InfoPageComponent implements OnInit {
     });
     this.dataService.getData().subscribe((data) => {
       this.data = data.items;
-      this.item = this.data.find((el: Item) => el.id === this.param);
+      this.item = this.youtubeItemService.findById(this.data, this.param);
     });
   }
 }
