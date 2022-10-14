@@ -20,7 +20,6 @@ export class LocalstorageService {
     localStorage.setItem('token', this.tokens[this.getRandomIndex()]);
   }
 
-  // eslint-disable-next-line class-methods-use-this
   getRandomIndex(): number {
     return getRandomNumber(this.tokens.length - 1);
   }
@@ -32,7 +31,6 @@ export class LocalstorageService {
   getUserNameFromLocalStorage() {
     if (localStorage.getItem('userName')) {
       const user = localStorage.getItem('userName');
-      console.log(user);
       if (user) {
         this.updateUsers(user);
         return user;

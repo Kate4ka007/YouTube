@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './core/services/http.service';
-import { Response } from './core/models/search-response.model';
-import { Item } from './core/models/search-item.model';
 import { ShowResultsService } from './core/services/show-results.service';
 
 @Component({
@@ -15,10 +13,6 @@ export class AppComponent implements OnInit {
 
   showSorts = false;
 
-  fullData:Response | undefined;
-
-  cardData: Item[] | undefined;
-
   startShow = false;
 
   typeSort!: string;
@@ -26,13 +20,6 @@ export class AppComponent implements OnInit {
   constructor(private httpService: HttpService, private openResults: ShowResultsService) {}
 
   ngOnInit(): void {
-    this.httpService.getData().subscribe({
-      next: (data:Response) => {
-        this.fullData = data;
-        this.cardData = data.items;
-      },
-    });
-
     this.openResults.results.subscribe((startShow: boolean) => {
       this.startShow = startShow;
     });
