@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// import { AppComponent } from './app.component';
+// import { AuthModule } from './auth/auth.module';
 import { NotFoundComponent } from './core/pages/not-found/not-found.component';
 import { MainPageComponent } from './youtube/pages/main-page/main-page.component';
+import {
+  AuthGuardService as AuthGuard,
+} from './auth/services/auth-guard.service';
 
 const routes: Routes = [
-  { path: '', component: MainPageComponent },
+  { path: '', component: MainPageComponent, canActivate: [AuthGuard] },
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),

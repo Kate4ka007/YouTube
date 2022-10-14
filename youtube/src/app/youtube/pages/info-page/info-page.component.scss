@@ -1,0 +1,107 @@
+@import "../../../../styles.scss";
+
+.info-page {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  color: #cccccc;
+  height: 60vh;
+
+  &__video {
+    border: 1px solid #606060;
+    border-right: none;
+    background-color: black;
+    align-items: center;
+    width: 750px;
+    display: flex;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__info {
+    padding: 15px;
+    padding-bottom: 20px;
+    color: #cccccc;
+    background-color: rgb(37, 37, 37);
+    border: 1px solid #606060;
+    border-left: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 40%;
+  }
+
+  &__date {
+    margin-bottom: 0.6rem;
+    font-style: italic;
+    font-size: 0.6rem;
+  }
+
+  &__title {
+    color: #cccccc;
+    margin-bottom: 0.6rem;
+  }
+
+  &__subtitle {
+    color: #cccccc;
+    margin-bottom: 0.6rem;
+  }
+
+  &__description {
+    margin-bottom: 15px;
+    height: 60%;
+    overflow: hidden;
+    overflow-y: auto;
+    color: #a5a5a5;
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+
+  &__icons {
+    margin-top: auto;
+  }
+  &__icon {
+    list-style: none;
+  }
+
+  &__back {
+    width: 50px;
+    height: 40px;
+    left: 12px;
+    top: -2px;
+    position: relative;
+  }
+}
+
+.info-page__description::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: rgb(37, 37, 37);
+}
+
+.info-page__description::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgb(37, 37, 37);
+}
+
+.info-page__description::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+.spinner {
+  width: 100%;
+}

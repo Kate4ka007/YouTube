@@ -5,12 +5,16 @@
 }
 
 .user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   &__auth {
     width: 35px;
     height: 35px;
     background-color: #a7a7a7;
     border-radius: 100%;
     padding: 5px;
+
     &:hover {
       cursor: pointer;
       background-color: lighten($color: #a7a7a7, $amount: 15);
@@ -25,4 +29,9 @@
     height: auto;
     border-radius: 100%;
   }
+}
+
+.user-name {
+  color: #cccccc;
+  margin-right: 10px;
 }

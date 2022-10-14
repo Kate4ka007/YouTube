@@ -6,6 +6,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { CoreModule } from '../core/core.module';
 import { InfoPageComponent } from './pages/info-page/info-page.component';
+import { AuthModule } from '../auth/auth.module';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     CoreModule,
+    AuthModule,
   ],
 })
 export class YoutubeModule { }

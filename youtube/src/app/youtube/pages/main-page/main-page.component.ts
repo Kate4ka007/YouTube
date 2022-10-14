@@ -42,10 +42,6 @@ export class MainPageComponent implements OnInit {
     this.showSorts = bool;
   }
 
-  /*   showResults(bool:boolean): void {
-    this.startShow = bool;
-  } */
-
   onChanged(str:string): void {
     this.typeSort = str;
   }
