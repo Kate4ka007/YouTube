@@ -7,10 +7,13 @@
 .user {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
   &__auth {
-    width: 35px;
-    height: 35px;
+    min-width: 35px;
+    min-height: 35px;
+    max-width: 35px;
+    max-height: 35px;
     background-color: #a7a7a7;
     border-radius: 100%;
     padding: 5px;

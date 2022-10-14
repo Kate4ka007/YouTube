@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 import { TOKENS } from '../models/token';
 import getRandomNumber from '../models/random-function';
 
@@ -12,6 +13,8 @@ export class LocalstorageService {
   private user = new BehaviorSubject('');
 
   userName = this.user.asObservable();
+
+  constructor(private router: Router) { }
 
   setToketolokalStorage(): void {
     localStorage.setItem('token', this.tokens[this.getRandomIndex()]);
@@ -26,14 +29,25 @@ export class LocalstorageService {
     localStorage.setItem('userName', userName);
   }
 
-  /*   getUserName() {
+  getUserNameFromLocalStorage() {
     if (localStorage.getItem('userName')) {
-      this.user = <string> localStorage.getItem('userName');
+      const user = localStorage.getItem('userName');
+      console.log(user);
+      if (user) {
+        this.updateUsers(user);
+        return user;
+      }
     }
-    return '';
-  } */
+    return this.user;
+  }
 
   updateUsers(user: string): void {
     this.user.next(user);
+  }
+
+  clearStorage() {
+    localStorage.clear();
+    this.router.navigate(['/auth/login']);
+    this.updateUsers('');
   }
 }

@@ -9,13 +9,18 @@ import { LocalstorageService } from 'src/app/auth/services/localstorage.service'
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
-  user = '';
+  user: string | null = '';
 
   constructor(private localstorageService: LocalstorageService) {
 
   }
 
   ngOnInit(): void {
+    this.localstorageService.getUserNameFromLocalStorage();
     this.localstorageService.userName.subscribe((user) => { this.user = user; });
+  }
+
+  onExit() {
+    this.localstorageService.clearStorage();
   }
 }
