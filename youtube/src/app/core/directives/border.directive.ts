@@ -48,10 +48,6 @@ export class BorderDirective implements OnInit {
     return '5px solid red';
   }
 
-  @HostBinding('style.cursor') get getCursor() {
-    return 'pointer';
-  }
-
   @HostBinding('style.color') get getColor() {
     return this.color;
   }

@@ -9,6 +9,7 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  gap: 10px;
   &__auth {
     min-width: 35px;
     min-height: 35px;
@@ -32,9 +33,15 @@
     height: auto;
     border-radius: 100%;
   }
+  &__exit {
+    width: 15px;
+    height: 15px;
+    width: 100%;
+    height: auto;
+
+  }
 }
 
 .user-name {
   color: #cccccc;
-  margin-right: 10px;
 }

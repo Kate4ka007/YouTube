@@ -3,10 +3,17 @@
 .info-page {
   width: 90%;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 25px;
   display: flex;
   color: #cccccc;
-  height: 60vh;
+  height: 65vh;
+  @media screen and (max-width: 1024px) {
+    width: 95%;
+  }
+  @media screen and (max-width: 767.8px) {
+    flex-direction: column;
+    width: 100%;
+  }
 
   &__video {
     border: 1px solid #606060;
@@ -15,6 +22,9 @@
     align-items: center;
     width: 750px;
     display: flex;
+    @media screen and (max-width: 767.8px) {
+      width: 100vw;
+    }
   }
 
   &__image {
@@ -33,6 +43,10 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 40%;
+
+    @media screen and (max-width: 767.8px) {
+      width: 100%;
+    }
   }
 
   &__date {
@@ -44,20 +58,34 @@
   &__title {
     color: #cccccc;
     margin-bottom: 0.6rem;
+    @media screen and (max-width: 1024px) {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+
   }
 
   &__subtitle {
     color: #cccccc;
     margin-bottom: 0.6rem;
+    @media screen and (max-width: 1024px) {
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
   }
 
   &__description {
     margin-bottom: 15px;
-    height: 60%;
+    height: 62%;
     overflow: hidden;
     overflow-y: auto;
     color: #a5a5a5;
     white-space: pre-line;
+    @media screen and (max-width: 1024px) {
+      font-size: 0.8rem;
+      margin-bottom: 0.4rem;
+      line-height: 140%;
+    }
   }
 
   &__list {
@@ -92,7 +120,7 @@
 }
 
 .info-page__description::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
   background-color: rgb(37, 37, 37);
 }
 

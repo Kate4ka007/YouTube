@@ -13,7 +13,6 @@ export class LoginFormComponent implements OnInit {
 
   submitForm(): void {
     if (this.validateForm.valid) {
-      // console.log('submit', this.validateForm.value);
       this.localstorageService.setUserNametoLocalStorage(this.validateForm.value.userName);
       this.localstorageService.setToketolokalStorage();
       this.localstorageService.updateUsers(this.validateForm.value.userName);
