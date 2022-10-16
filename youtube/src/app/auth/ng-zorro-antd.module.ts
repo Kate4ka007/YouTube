@@ -146,6 +146,6 @@ import { NzGraphModule } from 'ng-zorro-antd/graph';
     NzGraphModule,
   ],
 })
-export class DemoNgZorroAntdModule {
+export class ZorroAntdModule {
 
 }

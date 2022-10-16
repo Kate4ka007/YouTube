@@ -7,7 +7,7 @@ import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
 import en from '@angular/common/locales/en';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { DemoNgZorroAntdModule } from './ng-zorro-antd.module';
+import { ZorroAntdModule } from './ng-zorro-antd.module';
 import { AuthComponent } from './auth.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -37,7 +37,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
-    DemoNgZorroAntdModule,
+    ZorroAntdModule,
     ReactiveFormsModule,
     ScrollingModule,
     DragDropModule,
