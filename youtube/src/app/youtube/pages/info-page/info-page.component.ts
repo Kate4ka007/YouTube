@@ -27,8 +27,10 @@ export class InfoPageComponent implements OnInit {
       const date = params['id'];
       this.param = date;
     });
-    this.dataService.getData().subscribe((data) => {
-      this.data = data.items;
+
+    this.dataService.getFullData();
+    this.dataService.arrayItems.subscribe((el: Item[]) => {
+      this.data = el;
       this.item = this.youtubeItemService.findById(this.data, this.param);
     });
   }

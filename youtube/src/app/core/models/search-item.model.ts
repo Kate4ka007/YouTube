@@ -6,8 +6,21 @@ export interface Item {
   statistics: Statistics;
 }
 
+export interface ItemSearch {
+  kind: Kind;
+  etag: string;
+  id: Id;
+  snippet: Snippet;
+  statistics: Statistics;
+}
+
 export enum Kind {
   YoutubeVideo = 'youtube#video',
+}
+
+export interface Id {
+  kind: string;
+  videoId: string;
 }
 
 export interface Snippet {

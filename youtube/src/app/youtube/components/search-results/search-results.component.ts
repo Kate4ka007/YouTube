@@ -17,10 +17,7 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit(): void {
     this.sortTypeService.results.subscribe((data) => { this.typeSort = data; });
-    this.httpService.getData().subscribe({
-      next: (data:any) => {
-        this.cardData = data.items;
-      },
-    });
+    this.httpService.getFullData();
+    this.httpService.arrayItems.subscribe((el: Item[]) => { this.cardData = el; });
   }
 }

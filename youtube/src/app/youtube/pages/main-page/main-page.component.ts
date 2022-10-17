@@ -26,12 +26,7 @@ export class MainPageComponent implements OnInit {
   constructor(private httpService: HttpService, private openResults: ShowResultsService) {}
 
   ngOnInit(): void {
-    this.httpService.getData().subscribe({
-      next: (data:Response) => {
-        this.fullData = data;
-        this.cardData = data.items;
-      },
-    });
+    this.httpService.arrayItems.subscribe((el: Item[]) => { this.cardData = el; });
 
     this.openResults.results.subscribe((startShow: boolean) => {
       this.startShow = startShow;
