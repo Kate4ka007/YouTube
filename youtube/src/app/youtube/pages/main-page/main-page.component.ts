@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../../core/services/http.service';
-import { Response } from '../../../core/models/search-response.model';
+import { YoutubeResponse } from '../../../core/models/search-response.model';
 import { Item } from '../../../core/models/search-item.model';
 import { ShowResultsService } from '../../../core/services/show-results.service';
 
@@ -15,7 +15,7 @@ export class MainPageComponent implements OnInit {
 
   showSorts = false;
 
-  fullData:Response | undefined;
+  fullData:YoutubeResponse | undefined;
 
   cardData: Item[] | undefined;
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 import { YoutubeItemService } from 'src/app/core/services/youtube-item.service';
 import { Item } from '../../../core/models/search-item.model';
 import { HttpService } from '../../../core/services/http.service';
@@ -16,6 +17,8 @@ export class InfoPageComponent implements OnInit {
 
   param: string = '';
 
+  searchData = '';
+
   constructor(
     private dataService: HttpService,
     private activatedRoute: ActivatedRoute,
@@ -23,15 +26,29 @@ export class InfoPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe((params) => {
+    this.activatedRoute.queryParams.pipe(switchMap((params) => {
       const date = params['id'];
       this.param = date;
+      return this.dataService.getVideo(this.param);
+    })).subscribe((video) => {
+      this.item = video;
     });
 
-    this.dataService.getFullData();
-    this.dataService.arrayItems.subscribe((el: Item[]) => {
-      this.data = el;
-      this.item = this.youtubeItemService.findById(this.data, this.param);
-    });
+    /* this.dataService.getVideo(this.param).
+
+    this.youtubeItemService.search.pipe(
+      switchMap((searchData) => this.dataService.getData(searchData)),
+    )
+      .subscribe((el) => { */
+    /* this.data = el.items;
+        console.log('items-data', this.data); */
+    /*   console.log(this.param); */
+    /* this.item = this.youtubeItemService.findById(this.data, this.param); */
+    /* console.log('item', this.item);
+      }); */
+
+    /*     this.dataService.getData(this.searchData).subscribe((el: any) => {
+
+    }); */
   }
 }

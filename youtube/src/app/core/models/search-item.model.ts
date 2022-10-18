@@ -6,12 +6,8 @@ export interface Item {
   statistics: Statistics;
 }
 
-export interface ItemSearch {
-  kind: Kind;
-  etag: string;
+export interface ItemSearch extends Omit<Item, 'id'> {
   id: Id;
-  snippet: Snippet;
-  statistics: Statistics;
 }
 
 export enum Kind {

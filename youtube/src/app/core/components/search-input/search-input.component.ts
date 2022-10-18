@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { YoutubeItemService } from '../../services/youtube-item.service';
 
 @Component({
   selector: 'app-search-input',
@@ -6,16 +7,20 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./search-input.component.scss'],
 })
 export class SearchInputComponent {
-  angular = '';
+  searchValue = '';
 
   search = false;
 
   @Output() isSearch = new EventEmitter<boolean>();
 
+  constructor(private youtubeItemService: YoutubeItemService) { }
+
   onSearch(): void {
-    if (this.angular) {
+    if (this.searchValue.length >= 3) {
       this.search = true;
       this.isSearch.emit(this.search);
+      const str = this.searchValue.trim();
+      this.youtubeItemService.updateSearchData(str);
     } else {
       this.search = false;
       this.isSearch.emit(this.search);

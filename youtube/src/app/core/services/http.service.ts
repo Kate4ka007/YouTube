@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
 import {
-  KEY_YOUTUBE, BASE, MAX_RESULTS, SEARCH_DATA,
+  map, mergeMap, Observable, Subject,
+} from 'rxjs';
+import {
+  KEY_YOUTUBE, BASE, MAX_RESULTS,
 } from '../models/data';
 import { Item, ItemSearch } from '../models/search-item.model';
+import { YoutubeResponse } from '../models/search-response.model';
 
 @Injectable({ providedIn: 'root' })
 export class HttpService {
-  stringWithId = '';
-
   dataForCard!: any;
 
   private dataCard = new Subject<Item[]>();
@@ -22,30 +23,14 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  doSearch(searchData: string):Observable<any> {
-    return this.http.get(`${BASE}search?key=${KEY_YOUTUBE}&type=video&maxResults=${MAX_RESULTS}&q=${searchData}`);
+  getData(value: string): Observable<any> {
+    return this.http.get(`${BASE}search?key=${KEY_YOUTUBE}&type=video&maxResults=${MAX_RESULTS}&q=${value}`).pipe(mergeMap((res: any) => {
+      const stringWithId: string = res.items.map((item: ItemSearch) => item.id.videoId).join(',');
+      return this.http.get(`${BASE}videos?key=${KEY_YOUTUBE}&id=${stringWithId}&part=snippet,statistics`);
+    }));
   }
 
-  getVideoById(stringWithId: string):Observable<any> {
-    return this.http.get(`${BASE}videos?key=${KEY_YOUTUBE}&id=${stringWithId}&part=snippet,statistics`);
-  }
-
-  getFullData(): void {
-    this.doSearch(SEARCH_DATA).subscribe({
-      next: (data: any) => {
-        const cards = data.items;
-        const stringId:Array<string> = [];
-        cards.forEach((el: ItemSearch) => {
-          stringId.push(el.id.videoId);
-        });
-        this.stringWithId = stringId.join(',');
-        this.getVideoById(this.stringWithId).subscribe({
-          next: (elem: any) => {
-            this.dataForCard = elem.items;
-            this.updateShowResults(this.dataForCard);
-          },
-        });
-      },
-    });
+  getVideo(value: string): Observable<Item> {
+    return this.http.get<YoutubeResponse>(`${BASE}videos?key=${KEY_YOUTUBE}&id=${value}&part=snippet,statistics`).pipe(map((video) => video.items[0]));
   }
 }
