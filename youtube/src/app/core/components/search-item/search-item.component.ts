@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import getRandomNumber from 'src/app/auth/models/random-function';
 import { Item } from '../../models/search-item.model';
 
 @Component({
@@ -6,6 +7,12 @@ import { Item } from '../../models/search-item.model';
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.scss'],
 })
-export class SearchItemComponent {
+export class SearchItemComponent implements OnInit {
   @Input() data!: Item;
+
+  dislikes: number = 0;
+
+  ngOnInit() {
+    this.dislikes = getRandomNumber(100);
+  }
 }

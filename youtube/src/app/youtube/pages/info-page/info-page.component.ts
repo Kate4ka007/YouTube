@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
+import getRandomNumber from 'src/app/auth/models/random-function';
 import { Item } from '../../../core/models/search-item.model';
 import { HttpService } from '../../../core/services/http.service';
 
@@ -16,6 +17,8 @@ export class InfoPageComponent implements OnInit {
 
   param: string = '';
 
+  dislikes: number = 0;
+
   constructor(
     private dataService: HttpService,
     private activatedRoute: ActivatedRoute,
@@ -29,5 +32,7 @@ export class InfoPageComponent implements OnInit {
     })).subscribe((video) => {
       this.item = video;
     });
+
+    this.dislikes = getRandomNumber(100);
   }
 }
