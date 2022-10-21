@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
-import { YoutubeItemService } from 'src/app/core/services/youtube-item.service';
 import { Item } from '../../../core/models/search-item.model';
 import { HttpService } from '../../../core/services/http.service';
 
@@ -17,12 +16,9 @@ export class InfoPageComponent implements OnInit {
 
   param: string = '';
 
-  searchData = '';
-
   constructor(
     private dataService: HttpService,
     private activatedRoute: ActivatedRoute,
-    private youtubeItemService: YoutubeItemService,
   ) {}
 
   ngOnInit(): void {

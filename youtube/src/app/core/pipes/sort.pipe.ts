@@ -15,7 +15,7 @@ export class SortPipe implements PipeTransform {
           case 'date-down': return values.sort((a: Item, b: Item) => new Date(b.snippet.publishedAt).getTime() - new Date(a.snippet.publishedAt).getTime());
           case 'count': return values.sort((a: Item, b: Item) => +a.statistics.viewCount - +b.statistics.viewCount);
           case 'count-down': return values.sort((a: Item, b: Item) => +b.statistics.viewCount - +a.statistics.viewCount);
-          default: return values.filter((a: Item) => (`${a.snippet.tags.join(' ')} ${a.snippet.description} ${a.snippet.channelTitle}`).toLowerCase().includes(args!.toLowerCase()));
+          default: return values.filter((a: Item) => (`${a.snippet.tags ? a.snippet.tags.join(' ') : ''} ${a.snippet.description} ${a.snippet.channelTitle}`).toLowerCase().includes(args!.toLowerCase()));
         }
       } else {
         return values;

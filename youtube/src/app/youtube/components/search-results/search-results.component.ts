@@ -31,7 +31,6 @@ export class SearchResultsComponent implements OnInit {
       .subscribe((el) => {
         this.cardData = el.items;
         this.httpService.updateShowResults(this.cardData);
-        console.log(this.cardData);
       });
     this.sortTypeService.results.subscribe((data) => { this.typeSort = data; });
   }

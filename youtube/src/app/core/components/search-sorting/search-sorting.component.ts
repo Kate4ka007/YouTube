@@ -16,8 +16,6 @@ export class SearchSortingComponent {
 
   orderCount = true;
 
-  // @Output() typeSort = new EventEmitter<string>();
-
   constructor(private sortTypeService: SortTypeService) {}
 
   sortBy(str: string): void {
@@ -31,13 +29,11 @@ export class SearchSortingComponent {
     } else if (str === SortType.count && this.orderCount === false) {
       this.isSort = SortType.countDown;
     }
-    // this.typeSort.emit(this.isSort);
     this.sortTypeService.updateShowResults(this.isSort);
   }
 
   sortByWord(): void {
     if (this.word) {
-      // this.typeSort.emit(this.word);
       this.sortTypeService.updateShowResults(this.word);
     }
   }

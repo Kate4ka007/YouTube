@@ -13,9 +13,6 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-/* import {
-  AuthGuardService as AuthGuard,
-} from './services/auth-guard.service'; */
 
 registerLocaleData(en);
 

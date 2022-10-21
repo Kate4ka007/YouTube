@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../../core/services/http.service';
-import { YoutubeResponse } from '../../../core/models/search-response.model';
 import { Item } from '../../../core/models/search-item.model';
-import { ShowResultsService } from '../../../core/services/show-results.service';
 
 @Component({
   selector: 'app-main-page',
@@ -15,29 +13,11 @@ export class MainPageComponent implements OnInit {
 
   showSorts = false;
 
-  fullData:YoutubeResponse | undefined;
-
   cardData: Item[] | undefined;
 
-  // startShow = false;
-
-  typeSort!: string;
-
-  constructor(private httpService: HttpService, private openResults: ShowResultsService) {}
+  constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
     this.httpService.arrayItems.subscribe((el: Item[]) => { this.cardData = el; });
-
-    /*     this.openResults.results.subscribe((startShow: boolean) => {
-      this.startShow = startShow;
-    }); */
-  }
-
-  goApp(bool:boolean): void {
-    this.showSorts = bool;
-  }
-
-  onChanged(str:string): void {
-    this.typeSort = str;
   }
 }

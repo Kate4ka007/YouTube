@@ -11,8 +11,6 @@ export class HeaderComponent {
 
   @Output() goApp = new EventEmitter<boolean>();
 
-  // @Output() showResults = new EventEmitter<boolean>();
-
   constructor(private openResults: ShowResultsService) { }
 
   openSettings(showSetting:boolean): void {
@@ -21,7 +19,6 @@ export class HeaderComponent {
   }
 
   isSearch(search: boolean): void {
-    // this.showResults.emit(search);
     this.openResults.updateShowResults(search);
   }
 }
