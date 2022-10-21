@@ -1,7 +1,8 @@
 <div *ngIf="item" class="info-page" >
   <a class="info-page__back" routerLink="" routerLinkActive="active"><img src="assets/images/back_button.png"></a>
   <div class="info-page__video">
-    <img class="info-page__image" [src]="item.snippet.thumbnails.maxres.url" alt="">
+    <img *ngIf="item.snippet.thumbnails.maxres.url"
+    class="info-page__image" [src]="item.snippet.thumbnails.maxres.url" alt="">
   </div>
 
   <div class="info-page__info" [appBorder]="item.snippet.publishedAt">

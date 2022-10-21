@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { CustomRouteReuseStrategy } from './strategies/custom-route-reuse-strategy';
+import { YoutubeInterceptor } from './youtube/interceptor/youtube.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,11 @@ import { CustomRouteReuseStrategy } from './strategies/custom-route-reuse-strate
     {
       provide: RouteReuseStrategy,
       useClass: CustomRouteReuseStrategy,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: YoutubeInterceptor,
+      multi: true,
     },
   ],
   bootstrap: [AppComponent],

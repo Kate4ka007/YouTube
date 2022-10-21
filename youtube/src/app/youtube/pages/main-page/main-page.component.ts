@@ -19,7 +19,7 @@ export class MainPageComponent implements OnInit {
 
   cardData: Item[] | undefined;
 
-  startShow = false;
+  // startShow = false;
 
   typeSort!: string;
 
@@ -28,9 +28,9 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
     this.httpService.arrayItems.subscribe((el: Item[]) => { this.cardData = el; });
 
-    this.openResults.results.subscribe((startShow: boolean) => {
+    /*     this.openResults.results.subscribe((startShow: boolean) => {
       this.startShow = startShow;
-    });
+    }); */
   }
 
   goApp(bool:boolean): void {

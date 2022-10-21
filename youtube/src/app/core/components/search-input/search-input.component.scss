@@ -28,9 +28,12 @@
   &__button {
     border: 1px solid #686767;
     border-left: none;
-    background-color: #505050;
+    background-color: rgb(54, 54, 54);
     color: #cccccc;
-    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
     height: 30px;
     width: 37.5px;
 

@@ -33,22 +33,5 @@ export class InfoPageComponent implements OnInit {
     })).subscribe((video) => {
       this.item = video;
     });
-
-    /* this.dataService.getVideo(this.param).
-
-    this.youtubeItemService.search.pipe(
-      switchMap((searchData) => this.dataService.getData(searchData)),
-    )
-      .subscribe((el) => { */
-    /* this.data = el.items;
-        console.log('items-data', this.data); */
-    /*   console.log(this.param); */
-    /* this.item = this.youtubeItemService.findById(this.data, this.param); */
-    /* console.log('item', this.item);
-      }); */
-
-    /*     this.dataService.getData(this.searchData).subscribe((el: any) => {
-
-    }); */
   }
 }
