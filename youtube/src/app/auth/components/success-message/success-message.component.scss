@@ -1,0 +1,21 @@
+.message {
+  background-color: #162312;
+  border: 1px solid #489930;
+  align-items: center;
+  padding: 15px 15px 15px 24px;
+  color: white;
+  font-size: 1rem;
+  justify-content: flex-start;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  max-width: 1440px;
+}
+
+.path {
+  fill: #489930;
+}
+
+:host {
+  width: 100%;
+}

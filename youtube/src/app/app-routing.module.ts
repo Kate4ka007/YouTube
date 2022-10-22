@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: '', component: MainPageComponent, canActivate: [AuthGuard] },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule), canActivate: [AuthGuard]
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+
   },
   { path: 'youtube', loadChildren: () => import('./youtube/youtube.module').then((m) => m.YoutubeModule) },
   { path: '**', component: NotFoundComponent, canActivate: [AuthGuard] },

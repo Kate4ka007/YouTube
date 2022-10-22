@@ -18,9 +18,13 @@ import isUrlValid from '../../validator/isUrlValid';
 export class AdminPageComponent implements OnInit {
   validateForm!: UntypedFormGroup;
 
+  successMessage = false;
+
   submitForm(): void {
     if (this.validateForm.valid) {
       console.log(this.validateForm.value);
+      this.successMessage = true;
+      setTimeout(() => { this.successMessage = false; }, 3000);
     } else {
       Object.values(this.validateForm.controls).forEach((control) => {
         if (control.invalid) {

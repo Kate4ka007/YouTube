@@ -14,6 +14,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { SuccessMessageComponent } from './components/success-message/success-message.component';
+import {
+  AuthGuardService as AuthGuard,
+} from './services/auth-guard.service';
 
 registerLocaleData(en);
 
@@ -21,7 +25,7 @@ const routes: Routes = [
   { path: '', component: AuthComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: 'admin', component: AdminPageComponent },
+  { path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
@@ -32,6 +36,7 @@ const routes: Routes = [
     LoginFormComponent,
     SpinnerComponent,
     AdminPageComponent,
+    SuccessMessageComponent,
   ],
   imports: [
     CommonModule,

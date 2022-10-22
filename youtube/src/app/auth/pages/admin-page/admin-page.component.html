@@ -1,3 +1,4 @@
+<div class="message" *ngIf="successMessage"><app-success-message ></app-success-message></div>
 <div class="login">
   <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
     <h2 class="title">Create new card</h2>

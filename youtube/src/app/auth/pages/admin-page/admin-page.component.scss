@@ -21,7 +21,7 @@
 
 .login {
   background-color: #363636;
-  margin: 50px auto;
+  margin: 70px auto;
   max-width: 340px;
   padding: 20px;
   color: white;
@@ -92,3 +92,16 @@ span {
   border-color: #ff4d4f;
 }
 
+.ant-alert-with-description .ant-alert-message {
+  display: block;
+  margin-bottom: 4px;
+  color: rgb(255 255 255 / 85%);
+  font-size: 16px;
+}
+
+.message {
+  position: absolute;
+  top: 80px;
+  width: 100vw;
+   
+}
