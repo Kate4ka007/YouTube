@@ -13,6 +13,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 
 registerLocaleData(en);
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: '', component: AuthComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
+  { path: 'admin', component: AdminPageComponent },
 ];
 
 @NgModule({
@@ -29,6 +31,7 @@ const routes: Routes = [
     RegistrationComponent,
     LoginFormComponent,
     SpinnerComponent,
+    AdminPageComponent,
   ],
   imports: [
     CommonModule,

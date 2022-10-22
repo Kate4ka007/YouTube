@@ -36,10 +36,5 @@
     padding: 4px;
     height: 30px;
     width: 37.5px;
-
-    &:hover {
-      cursor: pointer;
-      background-color: lighten($color: #363636, $amount: 20);
-    }
   }
 }

@@ -16,7 +16,7 @@ export class LocalstorageService {
 
   constructor(private router: Router) { }
 
-  setToketolokalStorage(): void {
+  setTokenToLokalStorage(): void {
     localStorage.setItem('token', this.tokens[this.getRandomIndex()]);
   }
 
