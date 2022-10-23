@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import isDateValid from '../../validator/isDateValid';
+import isLinkValid from '../../validator/isLinkValid';
 import isUrlValid from '../../validator/isUrlValid';
 
 @Component({
@@ -22,7 +23,6 @@ export class AdminPageComponent implements OnInit {
 
   submitForm(): void {
     if (this.validateForm.valid) {
-      console.log(this.validateForm.value);
       this.successMessage = true;
       setTimeout(() => { this.successMessage = false; }, 3000);
     } else {
@@ -46,7 +46,7 @@ export class AdminPageComponent implements OnInit {
       ]),
       description: new FormControl('', [Validators.maxLength(255)]),
       img: new FormControl('', [Validators.required, isUrlValid]),
-      link: new FormControl('', [Validators.required, isUrlValid]),
+      link: new FormControl('', [Validators.required, isLinkValid]),
       date: new FormControl('', [Validators.required, isDateValid]),
     });
   }

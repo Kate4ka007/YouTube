@@ -8,10 +8,10 @@ export default (control: AbstractControl): { [key: string]: string } | null => {
   + '(\\?[;&a-z\\d%_.~+=-]*)?'
   + '(\\#[-a-z\\d_]*)?$', 'i');
   if (!(control.value as string)) {
-    return { isUrlValid: 'Please enter a link to the image!' };
+    return { isLinkValid: 'Please enter a link to the video!' };
   }
   if (!pattern.test(control.value)) {
-    return { isUrlValid: 'The image link is invalid' };
+    return { isLinkValid: 'The video link is invalid' };
   }
   return null;
 };

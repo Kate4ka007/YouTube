@@ -5,7 +5,7 @@
     <nz-form-item>
       <nz-form-control>
         <nz-input-group>
-          <input type="text" nz-input formControlName="title" placeholder="title" />
+          <input type="text" nz-input formControlName="title" placeholder="Title" />
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
@@ -23,7 +23,7 @@
     <nz-form-item>
       <nz-form-control>
         <nz-input-group>
-          <input type="text" nz-input formControlName="description" placeholder="description" />
+          <input type="text" nz-input formControlName="description" placeholder="Description" />
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
@@ -40,9 +40,7 @@
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
-    <div class="alert-danger" *ngIf="img?.errors?.['required'] && (img?.dirty || img?.touched)">
-      Please enter a link to the image
-    </div>
+
     <div class="alert-danger" *ngIf="img?.errors?.['isUrlValid'] && (img?.dirty || img?.touched)">
       {{img?.errors?.['isUrlValid']}}
     </div>
@@ -54,11 +52,9 @@
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
-    <div class="alert-danger" *ngIf="link?.errors?.['required'] && (link?.dirty || link?.touched)">
-      Please enter a link to the video
-    </div>
-    <div class="alert-danger" *ngIf="link?.errors?.['isUrlValid'] && (link?.dirty || link?.touched)">
-      {{link?.errors?.['isUrlValid']}}
+
+    <div class="alert-danger" *ngIf="link?.errors?.['isLinkValid'] && (link?.dirty || link?.touched)">
+      {{link?.errors?.['isLinkValid']}}
     </div>
 
     <nz-form-item>

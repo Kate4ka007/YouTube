@@ -5,8 +5,8 @@ import { YoutubeInterceptor } from './youtube.interceptor';
 describe('YoutubeInterceptor', () => {
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
-      YoutubeInterceptor
-      ]
+      YoutubeInterceptor,
+    ],
   }));
 
   it('should be created', () => {

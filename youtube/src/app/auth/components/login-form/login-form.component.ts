@@ -46,4 +46,6 @@ export class LoginFormComponent implements OnInit {
   }
 
   get password() { return this.validateForm.get('password'); }
+
+  get userName() { return this.validateForm.get('userName'); }
 }

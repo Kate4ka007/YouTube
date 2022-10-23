@@ -7,7 +7,7 @@ import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
 import en from '@angular/common/locales/en';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ZorroAntdModule } from './ng-zorro-antd.module';
+import { ZorroAntdModule } from './components/zorro/ng-zorro-antd.module';
 import { AuthComponent } from './auth.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { LoginComponent } from './pages/login/login.component';
