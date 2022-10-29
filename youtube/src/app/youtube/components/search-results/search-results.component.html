@@ -1,6 +1,6 @@
 <div class="search-results">
   <app-search-item *ngFor="let data of cardData | sort: typeSort" [data]="data"></app-search-item>
-  <app-custom-card *ngFor="let todo of todos$ | async" [data]="todo"></app-custom-card>
+  <app-custom-card *ngFor="let customCard of customCards$ | async" [data]="customCard"></app-custom-card>
 </div>
 
 

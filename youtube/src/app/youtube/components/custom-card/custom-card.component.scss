@@ -36,7 +36,7 @@
     text-align: right;
   }
   &__description {
-    text-align: right;
+    text-align: left;
   }
 
   &__date {
@@ -48,39 +48,9 @@
     text-align: right;
   }
 
-  &__button {
-    width: 100px;
-    background-color: #ff0000;
-    text-align: center;
-    border: none;
-    outline: none;
-    padding: 5px 5px;
-    border-radius: 5px;
-    color: white;
-    margin: 0 auto;
-    margin-top: auto;
-    &:hover {
-      cursor: pointer;
-      background-color: lighten($color: #ff0000, $amount: 15);
-    }
-  }
-
   &__img {
     border-radius: 5px;
     width: 100%;
-  }
-
-  &__list {
-    display: flex;
-    justify-content: space-around;
-    gap: 10px;
-    margin: 5px 0 15px 0;
-  }
-  &__icon {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 3px;
   }
 
 }

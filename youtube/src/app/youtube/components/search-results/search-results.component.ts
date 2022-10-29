@@ -20,7 +20,7 @@ export class SearchResultsComponent implements OnInit {
 
   searchData = '';
 
-  todos$: Observable<CustomCard[]>;
+  customCards$: Observable<CustomCard[]>;
 
   constructor(
     private sortTypeService: SortTypeService,
@@ -28,7 +28,7 @@ export class SearchResultsComponent implements OnInit {
     private youtubeItemService: YoutubeItemService,
     private store: Store<{ customCardState: Array<CustomCard>; }>,
   ) {
-    this.todos$ = store.select((state) => state.customCardState);
+    this.customCards$ = store.select((state) => state.customCardState);
   }
 
   ngOnInit(): void {
