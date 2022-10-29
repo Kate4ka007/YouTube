@@ -18,7 +18,7 @@ import { CustomRouteReuseStrategy } from './strategies/custom-route-reuse-strate
 import { YoutubeInterceptor } from './youtube/interceptor/youtube.interceptor';
 // import { metaReducers, reducers } from './store';
 import { CardEffects } from './store/effects/card.effects';
-import { customCardKey, todoReducer } from './store/reducers/card.reducer';
+import { customCardKey, customCardReducer } from './store/reducers/card.reducer';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { customCardKey, todoReducer } from './store/reducers/card.reducer';
     ReactiveFormsModule,
     AuthModule,
     StoreModule.forRoot({
-      [customCardKey]: todoReducer,
+      [customCardKey]: customCardReducer,
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([CardEffects]),

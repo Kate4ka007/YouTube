@@ -5,7 +5,8 @@ import { switchMap } from 'rxjs/operators';
 import { HttpService } from 'src/app/core/services/http.service';
 import { SortTypeService } from 'src/app/core/services/sort-type.service';
 import { YoutubeItemService } from 'src/app/core/services/youtube-item.service';
-import { CustomCard } from 'src/app/store/reducers/card.reducer';
+import { CustomCard, AppState } from 'src/app/store/reducers/card.reducer';
+import { selectFeatureCards } from 'src/app/store/selectors/card.selectors';
 import { Item } from '../../../core/models/search-item.model';
 
 @Component({
@@ -20,18 +21,18 @@ export class SearchResultsComponent implements OnInit {
 
   searchData = '';
 
-  customCards$: Observable<CustomCard[]>;
+  customCards$!: Observable<CustomCard[]>;
 
   constructor(
     private sortTypeService: SortTypeService,
     private httpService: HttpService,
     private youtubeItemService: YoutubeItemService,
-    private store: Store<{ customCardState: Array<CustomCard>; }>,
+    private store: Store<AppState>,
   ) {
-    this.customCards$ = store.select((state) => state.customCardState);
   }
 
   ngOnInit(): void {
+    this.customCards$ = this.store.select(selectFeatureCards);
     this.youtubeItemService.search.pipe(
 
       switchMap((searchData) => this.httpService.getData(searchData)),

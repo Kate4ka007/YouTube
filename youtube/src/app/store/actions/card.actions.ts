@@ -1,9 +1,12 @@
 import { createAction, props } from '@ngrx/store';
+// eslint-disable-next-line import/no-cycle
+import { CustomCard } from '../reducers/card.reducer';
 
-export const Add = createAction('[Custom card] Add', props<{
-  title: string;
-  description: string;
-  img: string;
-  link: string;
-  date: string;
-}>());
+export enum CardAction {
+  cardAction = '[Custom card] Add',
+}
+
+export const AddCardAction = createAction(
+  CardAction.cardAction,
+  props<{ payload: CustomCard; }>(),
+);

@@ -8,7 +8,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Add } from 'src/app/store/actions/card.actions';
+import { AddCardAction } from 'src/app/store/actions/card.actions';
 import { CustomCard } from 'src/app/store/reducers/card.reducer';
 import isDateValid from '../../validator/isDateValid';
 import isLinkValid from '../../validator/isLinkValid';
@@ -34,14 +34,18 @@ export class AdminPageComponent implements OnInit {
 
   submitForm(): void {
     if (this.validateForm.valid) {
-      this.store.dispatch(Add({
-        title: this.validateForm.value.title,
-        description: this.validateForm.value.description,
-        img: this.validateForm.value.img,
-        link: this.validateForm.value.link,
-        date: this.validateForm.value.date,
+      this.store.dispatch(AddCardAction({
+        payload: {
+          title: this.validateForm.value.title,
+          description: this.validateForm.value.description,
+          img: this.validateForm.value.img,
+          link: this.validateForm.value.link,
+          date: this.validateForm.value.date,
+        },
+
       }));
       this.successMessage = true;
+      this.validateForm.reset();
       setTimeout(() => { this.successMessage = false; }, 3000);
     } else {
       Object.values(this.validateForm.controls).forEach((control) => {
