@@ -7,6 +7,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Add } from 'src/app/store/actions/card.actions';
+import { CustomCard } from 'src/app/store/reducers/card.reducer';
 import isDateValid from '../../validator/isDateValid';
 import isLinkValid from '../../validator/isLinkValid';
 import isUrlValid from '../../validator/isUrlValid';
@@ -21,8 +24,23 @@ export class AdminPageComponent implements OnInit {
 
   successMessage = false;
 
+  constructor(
+    private fb: UntypedFormBuilder,
+    public router: Router,
+    private store: Store<{ customCardState: Array<CustomCard>; }>,
+  ) {
+
+  }
+
   submitForm(): void {
     if (this.validateForm.valid) {
+      this.store.dispatch(Add({
+        title: this.validateForm.value.title,
+        description: this.validateForm.value.description,
+        img: this.validateForm.value.img,
+        link: this.validateForm.value.link,
+        date: this.validateForm.value.date,
+      }));
       this.successMessage = true;
       setTimeout(() => { this.successMessage = false; }, 3000);
     } else {
@@ -34,8 +52,6 @@ export class AdminPageComponent implements OnInit {
       });
     }
   }
-
-  constructor(private fb: UntypedFormBuilder, public router: Router) {}
 
   ngOnInit(): void {
     this.validateForm = new FormGroup({

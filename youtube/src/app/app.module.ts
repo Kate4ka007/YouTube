@@ -5,12 +5,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import environment from 'src/environments/environment';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { CustomRouteReuseStrategy } from './strategies/custom-route-reuse-strategy';
 import { YoutubeInterceptor } from './youtube/interceptor/youtube.interceptor';
+// import { metaReducers, reducers } from './store';
+import { CardEffects } from './store/effects/card.effects';
+import { customCardKey, todoReducer } from './store/reducers/card.reducer';
 
 @NgModule({
   declarations: [
@@ -27,6 +35,12 @@ import { YoutubeInterceptor } from './youtube/interceptor/youtube.interceptor';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AuthModule,
+    StoreModule.forRoot({
+      [customCardKey]: todoReducer,
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([CardEffects]),
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [
     {

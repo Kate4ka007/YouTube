@@ -19,11 +19,10 @@
         "airbnb-typescript/base",
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
-
       ],
       "rules": {
         "import/prefer-default-export": "off",
-        "class-methods-use-this":"off",
+        "class-methods-use-this": "off",
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -49,7 +48,15 @@
       "extends": [
         "plugin:@angular-eslint/template/recommended"
       ],
-      "rules": { }
+      "rules": {}
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "plugin:@ngrx/recommended-requiring-type-checking"
+      ]
     }
   ]
 }

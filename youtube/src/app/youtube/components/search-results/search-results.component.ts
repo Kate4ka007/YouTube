@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { HttpService } from 'src/app/core/services/http.service';
 import { SortTypeService } from 'src/app/core/services/sort-type.service';
 import { YoutubeItemService } from 'src/app/core/services/youtube-item.service';
+import { CustomCard } from 'src/app/store/reducers/card.reducer';
 import { Item } from '../../../core/models/search-item.model';
 
 @Component({
@@ -17,11 +20,16 @@ export class SearchResultsComponent implements OnInit {
 
   searchData = '';
 
+  todos$: Observable<CustomCard[]>;
+
   constructor(
     private sortTypeService: SortTypeService,
     private httpService: HttpService,
-    private youtubeItemService:YoutubeItemService,
-  ) {}
+    private youtubeItemService: YoutubeItemService,
+    private store: Store<{ customCardState: Array<CustomCard>; }>,
+  ) {
+    this.todos$ = store.select((state) => state.customCardState);
+  }
 
   ngOnInit(): void {
     this.youtubeItemService.search.pipe(

@@ -9,6 +9,7 @@ import { CoreModule } from '../core/core.module';
 import { InfoPageComponent } from './pages/info-page/info-page.component';
 import { AuthModule } from '../auth/auth.module';
 import { YoutubeInterceptor } from './interceptor/youtube.interceptor';
+import { CustomCardComponent } from './components/custom-card/custom-card.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
     MainPageComponent,
     SearchResultsComponent,
     InfoPageComponent,
+    CustomCardComponent,
   ],
   imports: [
     CommonModule,
