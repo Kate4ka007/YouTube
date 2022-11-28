@@ -9,11 +9,11 @@
     </nz-form-item>
     <div class="alert-danger"
       *ngIf="userName?.errors?.['email'] && (userName?.dirty || userName?.touched)">
-      The login email is invalid!
+      The email is invalid!
     </div>
     <div class="alert-danger"
       *ngIf="userName?.errors?.['required'] && (userName?.dirty || userName?.touched)">
-      Please enter a login email!
+      Please enter a email!
     </div>
     <nz-form-item>
       <nz-form-control>

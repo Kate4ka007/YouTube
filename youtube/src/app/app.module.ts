@@ -16,7 +16,7 @@ import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { CustomRouteReuseStrategy } from './strategies/custom-route-reuse-strategy';
 import { YoutubeInterceptor } from './youtube/interceptor/youtube.interceptor';
-import { CardEffects } from './store/effects/card.effects';
+import { SearchEffects } from './store/effects/card.effects';
 import { customCardKey, customCardReducer } from './store/reducers/card.reducer';
 
 @NgModule({
@@ -38,7 +38,7 @@ import { customCardKey, customCardReducer } from './store/reducers/card.reducer'
       [customCardKey]: customCardReducer,
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([CardEffects]),
+    EffectsModule.forRoot([SearchEffects]),
     StoreRouterConnectingModule.forRoot(),
   ],
   providers: [
