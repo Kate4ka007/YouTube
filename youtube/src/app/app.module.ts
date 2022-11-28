@@ -16,7 +16,6 @@ import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { CustomRouteReuseStrategy } from './strategies/custom-route-reuse-strategy';
 import { YoutubeInterceptor } from './youtube/interceptor/youtube.interceptor';
-// import { metaReducers, reducers } from './store';
 import { CardEffects } from './store/effects/card.effects';
 import { customCardKey, customCardReducer } from './store/reducers/card.reducer';
 
