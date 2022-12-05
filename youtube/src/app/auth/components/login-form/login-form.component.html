@@ -1,0 +1,47 @@
+<div class="login">
+  <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control>
+        <nz-input-group nzPrefixIcon="user">
+          <input type="text" nz-input formControlName="userName" placeholder="User" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <div class="alert-danger"
+      *ngIf="userName?.errors?.['email'] && (userName?.dirty || userName?.touched)">
+      The email is invalid!
+    </div>
+    <div class="alert-danger"
+      *ngIf="userName?.errors?.['required'] && (userName?.dirty || userName?.touched)">
+      Please enter a email!
+    </div>
+    <nz-form-item>
+      <nz-form-control>
+        <nz-input-group nzPrefixIcon="lock">
+          <input type="password" name="password" id="password" nz-input formControlName="password"
+            placeholder="Password" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <div class="alert-danger" *ngIf="(password?.touched || password?.dirty)  && password?.errors?.['minlength']">
+      Your password isn't strong enough, at least 8 characters
+    </div>
+    <div class="alert-danger" *ngIf="(password?.touched || password?.dirty)  && password?.errors?.['isPasswordValid']">
+      {{password?.errors?.['isPasswordValid']}}
+    </div>
+
+    <div nz-row class="login-form-margin">
+      <div nz-col [nzSpan]="12">
+        <label nz-checkbox formControlName="remember">
+          <span>Remember me</span>
+        </label>
+      </div>
+      <div nz-col [nzSpan]="12">
+        <a class="login-form-forgot">Forgot password</a>
+      </div>
+    </div>
+    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+    <span>Or</span>
+    <a routerLink="/auth/registration" routerLinkActive="active">register now!</a>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+@import '../../../../styles.scss';
+
+.setting {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #363636;
+  border: 1px solid #686767;
+  border-radius: 5px;
+  padding:5px;
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($color: #363636, $amount: 10);
+  }
+  &__img {
+    width: 100%;
+  }
+}

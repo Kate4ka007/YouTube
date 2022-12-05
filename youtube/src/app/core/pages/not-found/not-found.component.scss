@@ -1,0 +1,33 @@
+.page {
+  width: 22%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin: 0 auto;
+  height: 70vh;
+
+
+  .not-found {
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    width: 100px;
+    margin: 0 auto;
+  }
+
+  .text {
+    color: #cccccc;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    width: 185px;
+  }
+}
+
+

@@ -1,0 +1,107 @@
+.login-form {
+  max-width: 300px;
+}
+
+.login-form-margin {
+  margin-bottom: 16px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+  background-color: red;
+  border: none;
+  &:hover {
+    background-color: lighten($color: #ff0000, $amount: 20);
+  }
+}
+
+.login {
+  background-color: #363636;
+  margin: 70px auto;
+  max-width: 340px;
+  padding: 20px;
+  color: white;
+  border: 1px solid #686767;
+}
+
+.ant-input,
+.ant-input-affix-wrapper {
+  padding: 4px 11px;
+  font-size: 14px;
+  background-color: rgb(70, 70, 70);
+  color: white;
+}
+
+.ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper,
+.ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper:hover {
+  background: #303030;
+  border-color: #ff4d4f;
+}
+
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input,
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:hover {
+  background: #303030;
+  border-color: #ff4d4f;
+}
+
+input {
+  background: #303030;
+}
+
+span {
+  color: white;
+  margin-right: 5px;
+}
+.alert {
+  background-color: green;
+  color: white;
+  width: 200px;
+  padding: 5px;
+}
+.alert-danger {
+  color: #ff4d4f;
+  padding-bottom: 15px;
+  margin-top: -23px;
+  line-height: 110%;
+  margin-bottom: 18px;
+
+}
+
+.ant-picker {
+  color: #f0f0f0;
+  background: #4d4d4d;
+}
+
+.ant-picker-input>input.ng-tns-c144-5 {
+  color: #f0f0f0;
+}
+
+.title {
+  color: #f0f0f0;
+}
+
+
+.ant-picker-status-error.ant-picker, .ant-picker-status-error.ant-picker:not([disabled]):hover {
+  border-color: #ff4d4f;
+}
+.ant-picker-status-error.ant-picker, .ant-picker-status-error.ant-picker:not([disabled]):hover {
+  border-color: #ff4d4f;
+}
+
+.ant-alert-with-description .ant-alert-message {
+  display: block;
+  margin-bottom: 4px;
+  color: rgb(255 255 255 / 85%);
+  font-size: 16px;
+}
+
+.message {
+  position: absolute;
+  top: 80px;
+  width: 100vw;
+   
+}

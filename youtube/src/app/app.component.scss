@@ -1,0 +1,17 @@
+@import '../styles.scss';
+body {
+  background-color: rgb(31, 32, 32);
+}
+
+:host {
+  min-width: 1440px;
+  width: 100%;
+}
+
+.main-page {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+

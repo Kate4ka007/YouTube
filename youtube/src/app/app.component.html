@@ -1,0 +1,6 @@
+  <div class="main-page" #main>
+    <app-header (goApp)="goApp($event)"></app-header>
+    <app-search-sorting *ngIf="showSorts"></app-search-sorting>
+    <router-outlet></router-outlet>
+  </div>
+

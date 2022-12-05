@@ -1,0 +1,6 @@
+
+<div class="user">
+  <span class="user-name">{{ user }}</span>
+  <div class="user__auth"><img class="user__img" src="assets/images/user1.png" alt="user-icon"></div>
+  <div class="user__auth" *ngIf="user" title="EXIT" (click)="onExit()"><img class="user__exit" src="assets/images/exit.png"></div>
+</div>

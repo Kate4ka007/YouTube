@@ -1,0 +1,43 @@
+<div *ngIf="item" class="info-page">
+  <a class="info-page__back" routerLink="" routerLinkActive="active"
+    ><img src="assets/images/back_button.png"
+  /></a>
+  <div class="info-page__video">
+    <img
+      *ngIf="item.snippet.thumbnails.maxres.url"
+      class="info-page__image"
+      [src]="item.snippet.thumbnails.maxres.url"
+      alt=""
+    />
+  </div>
+
+  <div class="info-page__info" [appBorder]="item.snippet.publishedAt">
+    <h1 class="info-page__title">{{ item.snippet.title }}</h1>
+    <div class="info-page__date">
+      {{ item.snippet.publishedAt | date: "fullDate" }}
+    </div>
+    <h2 class="info-page__subtitle">Description:</h2>
+    <div class="info-page__description">{{ item.snippet.description }}</div>
+    <div class="info-page__icons">
+      <ul class="info-page__list">
+        <li class="info-page__icon">
+          <img src="assets/images/viewed.png" alt="views" />
+          {{ item.statistics.viewCount }}
+        </li>
+        <li class="info-page__icon">
+          <img src="assets/images/liked.png" alt="likes" />
+          {{ item.statistics.likeCount }}
+        </li>
+        <li class="info-page__icon">
+          <img src="assets/images/dislike.png" alt="dislikes" />
+          {{ dislikes }}
+        </li>
+        <li class="info-page__icon">
+          <img src="assets/images/comments.png" alt="comments" />
+          {{ item.statistics.commentCount }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div *ngIf="!item" class="spinner"><app-spinner></app-spinner></div>

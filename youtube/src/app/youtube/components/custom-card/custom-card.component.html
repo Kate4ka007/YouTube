@@ -1,0 +1,8 @@
+<div class="card" [appBorder]="data.date">
+  <div class="card__image">
+    <img class="card__img" [src]="data.img" alt="">
+  </div>
+  <p class="card__title" >{{data.title}}<br> <span class="card__date">({{ data.date | date }})</span></p>
+  <p class="card__description" >{{data.description}}<br></p>
+  <p class="card__link" >Video: <a href="{{data.link}}" target="_blank">Video link</a></p>
+</div>

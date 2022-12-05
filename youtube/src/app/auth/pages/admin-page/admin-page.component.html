@@ -1,0 +1,76 @@
+<div class="message" *ngIf="successMessage"><app-success-message ></app-success-message></div>
+<div class="login">
+  <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+    <h2 class="title">Create new card</h2>
+    <nz-form-item>
+      <nz-form-control>
+        <nz-input-group>
+          <input type="text" nz-input formControlName="title" placeholder="Title" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <div class="alert-danger" *ngIf="(title?.dirty || title?.touched) && title?.errors?.['required'] ">
+      Please enter a title!
+    </div>
+    <div class="alert-danger" *ngIf="(title?.dirty || title?.touched) && title?.errors?.['minlength'] ">
+      The title is too short
+    </div>
+    <div class="alert-danger" *ngIf="(title?.dirty || title?.touched) && title?.errors?.['maxlength'] ">
+      The title is too long
+    </div>
+
+
+    <nz-form-item>
+      <nz-form-control>
+        <nz-input-group>
+          <input type="text" nz-input formControlName="description" placeholder="Description" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <div class="alert-danger"
+      *ngIf="description?.errors?.['maxlength'] && (description?.dirty || description?.touched)">
+      The description is too long
+    </div>
+
+
+    <nz-form-item>
+      <nz-form-control>
+        <nz-input-group>
+          <input type="text" nz-input formControlName="img" placeholder="Image" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <div class="alert-danger" *ngIf="img?.errors?.['isUrlValid'] && (img?.dirty || img?.touched)">
+      {{img?.errors?.['isUrlValid']}}
+    </div>
+
+    <nz-form-item>
+      <nz-form-control>
+        <nz-input-group>
+          <input type="text" nz-input formControlName="link" placeholder="Link video" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <div class="alert-danger" *ngIf="link?.errors?.['isLinkValid'] && (link?.dirty || link?.touched)">
+      {{link?.errors?.['isLinkValid']}}
+    </div>
+
+    <nz-form-item>
+      <nz-form-control [nzSpan]="12" nzHasFeedback>
+        <nz-date-picker name="date-picker-success" formControlName="date"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
+    <div class="alert-danger" *ngIf="date?.errors?.['required'] && (date?.dirty || date?.touched)">
+      Please enter a creation date
+    </div>
+    <div class="alert-danger" *ngIf="(date?.touched || date?.dirty)  && date?.errors?.['isDateValid']">
+      {{date?.errors?.['isDateValid']}}
+    </div>
+
+    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Create card</button>
+
+  </form>
+</div>
+
